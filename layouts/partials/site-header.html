@@ -12,7 +12,7 @@
         </h1>
         {{ end }}
         {{ $description_classes := .Param "description_classes"}}
-        {{ with .Params.description }}
+        {{ with .Param "description" }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3 {{ $description_classes }}">
             {{ . }}
           </h2>
@@ -31,7 +31,7 @@
         </h1>
         {{ end }}
         {{ $description_classes := .Param "description_classes"}}
-        {{ with .Params.description }}
+        {{ with .Param "description" }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4 {{ $description_classes }}">
             {{ . }}
           </h2>
