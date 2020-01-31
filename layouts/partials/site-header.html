@@ -17,6 +17,18 @@
             {{ . }}
           </h2>
         {{ end }}
+        {{ if .Site.Menus.action }}
+        <ul class="pl0 mr3 pt3">
+          {{ $action_menu_item_classes := .Site.Params.action_menu_item_classes }}
+          {{ range .Site.Menus.action }}
+          <li class="list f5 f4-ns fw4 dib pr3 {{ $action_menu_item_classes }}">
+            <a class="br2 pa3 hover-white no-underline white fw5" href="{{ .URL }}" title="{{ .Name }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
       </div>
     </div>
   </header>
@@ -35,6 +47,18 @@
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4 {{ $description_classes }}">
             {{ . }}
           </h2>
+        {{ end }}
+        {{ if .Site.Menus.action }}
+        <ul class="pl0 mr3 pt3">
+          {{ $action_menu_item_classes := .Site.Params.action_menu_item_classes }}
+          {{ range .Site.Menus.action }}
+          <li class="list f5 f4-ns fw4 dib pr3 {{ $action_menu_item_classes }}">
+            <a class="br2 pa3 hover-white no-underline white fw5" href="{{ .URL }}" title="{{ .Name }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
         {{ end }}
       </div>
     </div>
