@@ -23,6 +23,10 @@
       <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
     {{ end }}
 
+    {{ block "scripts-head" . }}
+      {{ partialCached "additional-site-scripts-head.html" . }}
+    {{ end }}
+
     {{ block "favicon" . }}
       {{ partialCached "site-favicon.html" . }}
     {{ end }}
@@ -51,6 +55,9 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
-    {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
+    {{ block "scripts" . }}
+      {{ partialCached "site-scripts.html" . }}
+      {{ partialCached "additional-site-scripts-body.html" . }}
+    {{ end }}
   </body>
 </html>
