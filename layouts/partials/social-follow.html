@@ -60,3 +60,10 @@
   {{- partial "new-window-icon.html" . -}}
 </a>
 {{ end }}
+{{ $login_icon_partial := .Param "login_icon_partial" }}
+{{ with .Param "login" }}
+<a href="{{ . }}" target="_blank" class="link-transition link dib z-999 pt3 pt0-l mr1" title="Log in" rel="noopener" aria-label="Log in——Opens in a new window">
+  {{ partial $login_icon_partial (dict "size" $icon_size) }}
+  {{- partial "new-window-icon.html" . -}}
+</a>
+{{ end }}

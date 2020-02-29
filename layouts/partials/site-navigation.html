@@ -1,4 +1,4 @@
-<nav class="pv3 ph3 ph4-ns w-100 w-70-ns center" role="navigation">
+<nav class="pv3 ph3 ph4-ns w-100 w-100-ns center bg-white" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="{{ .Site.BaseURL }}" class="f3 fw2 hover-white no-underline white-90 dib">
       <img src="{{ .Site.Params.logo_url }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
@@ -10,14 +10,14 @@
           {{ $menu_item_classes := .Site.Params.menu_item_classes }}
           {{ range .Site.Menus.main }}
           <li class="list f5 f4-ns fw4 dib pr3 site-menu-item">
-            <a class="hover-white no-underline fw4 {{ $menu_item_classes }}" href="{{ .URL }}" title="{{ .Name }} page">
+            <a class="no-underline fw4 {{ $menu_item_classes }}" href="{{ .URL }}" title="{{ .Name }}">
               {{ .Name }}
             </a>
           {{ if .HasChildren }}
             <ul class="sub-menu">
               {{ range .Children }}
                 <li class="list f5 f4-ns fw4 dib">
-                  <a class="hover-white no-underline fw4 {{ $menu_item_classes }}" href="{{ .URL }}" title="{{ .Title }}">
+                  <a class="no-underline fw4 {{ $menu_item_classes }}" href="{{ .URL }}" title="{{ .Title }}">
                     {{ .Name }}
                   </a>
                 </li>
