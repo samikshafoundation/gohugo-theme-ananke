@@ -39,7 +39,8 @@
       {{ end }}
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+    {{/* Use full width if there is no table of contents for the page. */}}
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l {{ if .Params.toc }}w-two-thirds-l{{ end }}">
       {{- .Content -}}
       {{- partial "tags.html" . -}}
       <div class="mt6">
